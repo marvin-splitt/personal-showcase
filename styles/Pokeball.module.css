@@ -1,0 +1,62 @@
+.container {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    animation: rotation 2s infinite linear;
+  }
+  
+  .ball {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    border-radius: 50%;
+    border: solid 25px black;
+  }
+  
+  .ball::before {
+    content: "";
+    position: absolute;
+    background-color: red;
+    width: 200px;
+    height: 87.5px;
+    top: -100px;
+    left: -100px;
+    border-radius: 125px 125px 0 0;
+    border: solid 25px;
+    border-bottom: solid 12.5px;
+    z-index: -1;
+  }
+  
+  .ball::after {
+    content: "";
+    position: absolute;
+    background-color: white;
+    width: 200px;
+    height: 87.5px;
+    top: 25px;
+    left: -100px;
+    border-radius: 125px 125px 0 0;
+    border: solid 25px;
+    border-bottom: solid 12.5px;
+    transform: rotate(180deg);
+    z-index: -1;
+  }
+  
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
